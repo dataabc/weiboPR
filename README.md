@@ -32,15 +32,15 @@ $ git clone https://github.com/dataabc/weibopr.git
 5、按需求调用脚本。本脚本是一个weibo类，用户可以按照自己的需求调用weibo类。
 例如用户可以直接在"weiboPR.py"文件中调用weibo类，具体调用代码示例如下：
 ```python
-	user_ids = [1729370543,1644461042,1669879400,2617744132] #替换成我们目标用户的id
-	user_pr = {} #存储用户的pr值，用来判断用户的影响力，pr值越大代表影响力越高
-	filter = 1 #值为0表示爬取全部的微博信息（原创微博+转发微博），值为1表示只爬取原创微博
-	for i in user_ids:
-		 wb = weibo(i,filter) #调用weibo类，创建微博实例wb
-		 wb.start() #爬取微博信息
-		 user_pr[i] = wb.pr #获得用户id为i的pr值
-		 wb.writeTxt() #wb.writeTxt()只是把信息写到文件里，大家可以根据自己的需要重新编写writeTxt()函数
-	print user_pr
+user_ids = [1729370543,1644461042,1669879400,2617744132] #替换成我们目标用户的id
+user_pr = {} #存储用户的pr值，用来判断用户的影响力，pr值越大代表影响力越高
+filter = 1 #值为0表示爬取全部的微博信息（原创微博+转发微博），值为1表示只爬取原创微博
+for i in user_ids:
+	wb = weibo(i,filter) #调用weibo类，创建微博实例wb
+	wb.start() #爬取微博信息
+	user_pr[i] = wb.pr #获得用户id为i的pr值
+	wb.writeTxt() #wb.writeTxt()只是把信息写到文件里，大家可以根据自己的需要重新编写writeTxt()函数
+print user_pr
 ```
 user_id可以改成任意合法的用户id（爬虫的微博id除外）；filter默认值为0，表示爬取所有微博信息（转发微博+原创微博），为1表示只爬取用户的所有原创微博；wb是weibo类的一个实例，也可以是其它名字，只要符合python的命名规范即可；通过执行wb.start() 完成了微博的爬取工作。在上述代码之后，user_pr就存储了对应id用户的pr值；
 6、运行脚本。我的运行环境是ipython,通过
