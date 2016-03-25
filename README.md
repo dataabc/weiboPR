@@ -25,7 +25,7 @@ user_ids = [1729370543,1644461042,1669879400,2617744132]
 ```bash
 $ git clone https://github.com/dataabc/weibopr.git
 ```
-运行上述命令，将本项目下载到当前目录，如果下载成功当前目录会出现一个名为"weiboPR"的文件夹；<br>
+运行上述命令，将本项目下载到当前目录，如果下载成功当前目录会出现一个名为"weibopr"的文件夹；<br>
 2、用文本编辑器打开weiboPR文件夹下的"weiboPR.py"文件；<br>
 3、将"weiboPR.py"文件中的“your cookie”替换成爬虫微博的cookie，后面会详细讲解如何获取cookie；<br>
 4、将"weiboPR.py"文件中的user_id替换成想要爬取的微博的user_id，后面会详细讲解如何获取user_id；<br>
