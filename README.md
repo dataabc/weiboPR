@@ -32,7 +32,7 @@ $ git clone https://github.com/dataabc/weibopr.git
 5、按需求调用脚本。本脚本是一个weibo类，用户可以按照自己的需求调用weibo类。
 例如用户可以直接在"weiboPR.py"文件中调用weibo类，具体调用代码示例如下：
 ```python
-user_ids = [1729370543,1644461042,1669879400,2617744132] #替换成我们目标用户的id
+user_ids = [1729370543,1669879400] #替换成我们目标用户的id
 user_pr = {} #存储用户的pr值，用来判断用户的影响力，pr值越大代表影响力越高
 filter = 1 #值为0表示爬取全部的微博信息（原创微博+转发微博），值为1表示只爬取原创微博
 for i in user_ids:
