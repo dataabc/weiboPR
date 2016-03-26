@@ -90,10 +90,10 @@ class weibo:
 		  html2 = requests.get(url2, cookies = weibo.cookie).content
 		  selector2 = etree.HTML(html2)
 		  info = selector2.xpath("//div[@class='c']")
-		  #print len(info)
 		  if len(info) > 3:
 			for i in range(0,len(info)-2):
 			  self.weiboNum2 = self.weiboNum2 + 1
+			  print '正在爬取' + self.userName + '的第' + str(self.weiboNum2) + '条微博'
 			  #微博内容
 			  str_t = info[i].xpath("div/span[@class='ctt']")
 			  weibos = str_t[0].xpath('string(.)').encode('gbk','ignore')
@@ -168,7 +168,7 @@ class weibo:
 
 #使用实例
 try:
-	user_ids = [1729370543,1644461042,1669879400,2617744132] #替换成我们目标用户的id，可以改成任意合法的用户id（爬虫的微博id除外）
+	user_ids = [1729370543,1669879400] #替换成我们目标用户的id，可以改成任意合法的用户id（爬虫的微博id除外）
 	user_pr = {} #存储用户的pr值，用来判断用户的影响力，pr值越大代表影响力越高
 	filter = 1 #值为0表示爬取全部的微博信息（原创微博+转发微博），值为1表示只爬取原创微博
 	for i in user_ids:
@@ -176,7 +176,8 @@ try:
 		wb.start() #爬取微博信息
 		user_pr[i] = wb.pr #获得用户id为i的pr值
 		wb.writeTxt() #wb.writeTxt()只是把信息写到文件里，大家可以根据自己的需要重新编写writeTxt()函数
-	print user_pr
+	for i in user_ids:
+	    print 'id为' + str(i) + '的用户的pr值为：' + str(user_pr[i])
 except Exception,e:		   
 		print "Error: ",e  
 		traceback.print_exc()
