@@ -26,7 +26,7 @@ user_ids = [1729370543,1644461042,1669879400,2617744132]
 $ git clone https://github.com/dataabc/weibopr.git
 ```
 运行上述命令，将本项目下载到当前目录，如果下载成功当前目录会出现一个名为"weibopr"的文件夹；<br>
-2、用文本编辑器打开weiboPR文件夹下的"weiboPR.py"文件；<br>
+2、用文本编辑器打开weibopr文件夹下的"weiboPR.py"文件；<br>
 3、将"weiboPR.py"文件中的“your cookie”替换成爬虫微博的cookie，后面会详细讲解如何获取cookie；<br>
 4、将"weiboPR.py"文件中的user_id替换成想要爬取的微博的user_id，后面会详细讲解如何获取user_id；<br>
 5、按需求调用脚本。本脚本是一个weibo类，用户可以按照自己的需求调用weibo类。
@@ -42,7 +42,7 @@ for i in user_ids:
 	wb.writeTxt() #wb.writeTxt()只是把信息写到文件里，大家可以根据自己的需要重新编写writeTxt()函数
 print user_pr
 ```
-user_id可以改成任意合法的用户id（爬虫的微博id除外）；filter默认值为0，表示爬取所有微博信息（转发微博+原创微博），为1表示只爬取用户的所有原创微博；wb是weibo类的一个实例，也可以是其它名字，只要符合python的命名规范即可；通过执行wb.start() 完成了微博的爬取工作。在上述代码之后，user_pr就存储了对应id用户的pr值；
+user_id可以改成任意合法的用户id（爬虫的微博id除外）；filter默认值为0，表示爬取所有微博信息（转发微博+原创微博），为1表示只爬取用户的所有原创微博；wb是weibo类的一个实例，也可以是其它名字，只要符合python的命名规范即可；通过执行wb.start() 完成了微博的爬取工作。在上述代码之后，user_pr就存储了对应id用户的pr值；<br>
 6、运行脚本。我的运行环境是ipython,通过
 ```bash
 $ run filepath/weiboPR.py
